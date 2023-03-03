@@ -35,9 +35,10 @@ if len(article_text) > 5:
 
         response = openai.ChatCompletion.create(
             model = "gpt-3.5-turbo",
-            messages = prompt,
+            prompt = prompt,
             max_tokens = 2000,
             temperature = temp
+            messages = conversation
         )
 
         res = response["choices"][0]["text"]
