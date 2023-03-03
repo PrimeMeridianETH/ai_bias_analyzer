@@ -38,6 +38,7 @@ if len(article_text) > 5:
             prompt = prompt,
             max_tokens = 2000,
             temperature = temp
+            endpoint = "https://api.openai.com/v1/chat"
         )
 
         res = response["choices"][0]["text"]
