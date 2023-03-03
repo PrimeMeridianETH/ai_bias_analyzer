@@ -33,12 +33,11 @@ if len(article_text) > 5:
 
         For each bias analysis section, please provide slight detail and each metric used per bias analysis section as well ranking criteria used. Use only the text information located here: {article_text}"""
 
-        response = openai.Completion.create(
+        response = openai.ChatCompletion.create(
             engine = "gpt-3.5-turbo",
             prompt = prompt,
             max_tokens = 2000,
             temperature = temp
-            endpoint = "https://api.openai.com/v1/chat"
         )
 
         res = response["choices"][0]["text"]
