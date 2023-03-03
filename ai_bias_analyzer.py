@@ -17,7 +17,7 @@ if len(article_text) > 5:
     if st.button ('Generate Report'):
         response = openai.Completion.create(
             engine = "text-davinci-003",
-            prompt = "you are tasked with determining any bias/opinions from supplied information on a set of gradient scales. outline the gradient scales used. Use only the text information located here: " + article_text,
+            prompt = "you are tasked with determining any bias from supplied information on a set of gradient scales between 1 to 10 (where 5 equals no bias, and between 1 and 10 are contrasting bias orientation) using these criteria where applicable: Racial bias, Gender bias, Sexual Oreintation bias, Socioeconomic bias, Religious bias, Cultural bias, Political bias, Geopolitical bias, Economic Bias. Use only the text information located here: " + article_text,
             max_tokens = 2000,
             temperature = temp
         )
